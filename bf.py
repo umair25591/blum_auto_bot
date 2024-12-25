@@ -104,15 +104,7 @@ while True:
             #     break
 
 
-            if (r in range(240, 256)) and (g in range(240, 256)) and (b in range(240, 256)):
-                # This is for detecting white pixels
-                screen_x = window_rect[0] + x
-                screen_y = window_rect[1] + y
-                click(screen_x + 4, screen_y)
-                time.sleep(0.001)
-                pixel_found = True
-                break
-            elif (r in range(120, 150)) and (g in range(50, 70)) and (b in range(0, 40)):
+            if (r in range(120, 150)) and (g in range(50, 70)) and (b in range(0, 40)):
                 # This is for detecting shades of brown near (132, 56, 7)
                 screen_x = window_rect[0] + x
                 screen_y = window_rect[1] + y
@@ -138,6 +130,14 @@ while True:
                 break
             elif (r in range(90, 110)) and (g in range(160, 180)) and (b in range(20, 60)):
                 # This is for detecting shades of green near (100, 169, 39)
+                screen_x = window_rect[0] + x
+                screen_y = window_rect[1] + y
+                click(screen_x + 4, screen_y)
+                time.sleep(0.001)
+                pixel_found = True
+                break
+            elif (r in range(240, 256)) and (g in range(240, 256)) and (b in range(240, 256)):
+                # This is for detecting white pixels
                 screen_x = window_rect[0] + x
                 screen_y = window_rect[1] + y
                 click(screen_x + 4, screen_y)
